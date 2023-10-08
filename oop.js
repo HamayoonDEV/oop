@@ -1,21 +1,12 @@
 class Parent {
-  constructor(name) {
+  #age;
+  constructor(age, name) {
+    this.#age = age;
     this.name = name;
   }
-  detail = () => console.log(`i am ${this.name}`);
+  detail = () => console.log(`this is my ${this.#age}`);
 }
 
-class Child extends Parent {
-  constructor(name, age) {
-    super(name);
-    this.age = age;
-  }
-  completeDetail = () => console.log(`i am ${this.name} my age is ${this.age}`);
-  detail = () => {
-    console.log(`i am fucking ${this.name}`);
-  };
-}
+const ob = new Parent(10, "hamayoon");
 
-const ob1 = new Child("abid", 10);
-
-ob1.detail();
+console.log(ob);
